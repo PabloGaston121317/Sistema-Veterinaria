@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block titulo_pagina %}
+        Listado De animales
+    {% endblock %}
+    {% block titulo_principal %}
+        Listado de Animales
+    {% endblock %}
+    {% block contenido-1 %}
+            {% block contenido-tabla %}
+            <table  class="table table-striped table-hover">
+                <thead>
+                    <tr class="table-info">
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Categoria</th>
+                        <th>Dueño</th>
+                        <th>Modificar</th>
+                        <th>Borrar</th>
+                    </tr>
+                </thead>
+                {% for animal in animales %}
+                    <tr>
+                        <td>{{ animal.id }}</td>
+                        <td>{{ animal.nombre }}</td>
+                        <td>{{ animal.raza }}</td>
+                        <td>{{ animal.categoria }}</td>
+                        <td>{{ animal.duenio }}</td>
+                        <td><a href="{% url 'modificar_animal' animal.id %}">Modificar</a></td>
+                        <td><a href="{% url 'borrar_animal' animal.id %}">Borrar</a></td>
+                    </tr>
+            
+                {% endfor %}
+            </table>
+            {% endblock %}
+    {% endblock %}

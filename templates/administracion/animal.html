@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo_pagina %}
+    Informacion del Animal
+{% endblock %}
+{% block titulo_principal %}
+    Datos De {{animal.nombre}}
+{% endblock %}
+{% block contenido-1 %}
+    <table style="width: 80%;margin: 30px auto;border-collapse: collapse;border: 2px solid #4CAF50;font-family: Arial, sans-serif;text-align: center;box-shadow: 0px 4px 10px rgba(0,0,0,0.2);background-color: #ffffff;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>RAZA</th>
+                <th>CATEGORIA</th>
+                <th>DNI DUEÑO</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{ animal.id }}</td>
+            <td>{{ animal.nombre }}</td>
+            <td>{{ animal.raza }}</td>
+            <td>{{ animal.categoria }}</td>
+            <td>{{ animal.duenio }}</td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block titulo_pagina %}
+    Advertencia Borrado
+{% endblock %}
+{% block titulo_principal %}
+    ADVERTENCIA !
+{% endblock %}
+{% block contenido-1 %}
+    <form  method="post">
+        {% csrf_token %}
+        <h4>¿ Esta seguro que desea borrar a {{ apellido }}, {{ nombre }}  DNI -> {{ dni }}</h4>
+        <br>
+        <input type="submit" value="Confirmar">
+    </form>
+{% endblock %}
